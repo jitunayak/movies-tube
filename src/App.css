@@ -18,29 +18,43 @@
   font-size: 32px;
   text-align: center;
   overflow-wrap: break-word;
-  line-height: 15px;
+  line-height: 25px;
 }
 .text-s{
   font-weight: 400;
   font-size: 17px;
   text-align: center;
   color: rgba(0, 0, 32, 0.8);
-  line-height: 16px;
+  line-height: 25px;
+  margin-top: 5px;
 }
 .login-btn{
   margin: 5px;
   text-decoration: none;
-  background-color: #4630EB;
+  background-color: rgb(59, 59, 59);
   line-height: 1;
   color: aliceblue;
   font-weight: 500;
   font-size: large;
-  line-height: 34px;
+  line-height: 38px;
   width: 83%;
   outline: none;
   border: none;
   border-radius: 5px;
- 
+}
+.login-btn:hover{
+  margin: 5px;
+  text-decoration: none;
+  background-color: #FCD600;
+  line-height: 1;
+  color: black;
+  font-weight: 550;
+  font-size: large;
+  line-height: 40px;
+  width: 83%;
+  outline: 1;
+  border: none;
+  border-radius: 5px;
 }
 .form{
   align-items: center;
@@ -48,6 +62,35 @@
   margin: 0 auto 0 auto;
   max-width: 480px;
   width: 40%;
-  padding: 0 30px 0 30px;
   position: relative;
+  top: 300px;
+}
+
+.logout-btn{
+  margin: 5px;
+  text-decoration: none;
+  background-color: #6B8790;
+  line-height: 1;
+  color: aliceblue;
+  font-weight: 500;
+  font-size: large;
+  line-height: 38px;
+  width: auto;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+.logout-btn:hover{
+  margin: 5px;
+  text-decoration: none;
+  background-color: rgb(41, 115, 139);
+  line-height: 1;
+  color: aliceblue;
+  font-weight: 500;
+  font-size: large;
+  line-height: 38px;
+  width: auto;
+  outline: none;
+  border: none;
+  border-radius: 5px;
 }

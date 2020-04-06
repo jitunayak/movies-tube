@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
+import logo from './logo.jpg';
+import { Alert } from 'react-bootstrap';
+
 
 export default class LoginPage extends Component {
 
     constructor(props) {
         super(props)
-        localStorage.removeItem("token")
         let loggedIn = false
+        var alert = false
+
         this.state = {
             username: "",
             password: "",
-            loggedIn
+            loggedIn,
+            alert,
+            alert_msg: ""
         }
         this.onChange = this.onChange.bind(this)
         this.submitForm = this.submitForm.bind(this)
@@ -20,6 +26,7 @@ export default class LoginPage extends Component {
             [e.target.name]: e.target.value
         })
     }
+
 
     submitForm(e) {
         e.preventDefault()
@@ -32,6 +39,21 @@ export default class LoginPage extends Component {
                 loggedIn: true
             })
         }
+        else if (username === "" && password === "") {
+            this.setState({
+                alert: true,
+                alert_msg: "Fields are empty"
+            })
+
+
+        }
+        else {
+            this.setState({
+                alert: true,
+                alert_msg: " Username or Password is incorrect"
+            })
+
+        }
     }
 
     render() {
@@ -39,14 +61,25 @@ export default class LoginPage extends Component {
         if (this.state.loggedIn) {
             return <Redirect to="/l" />
         }
+        if (this.state.alert) {
+            return <div> <div class="alert alert-danger" role="alert">
+                {this.state.alert_msg}
+            </div>
+                <LoginPage />
+            </div>
+
+
+        }
         return (
             <div className="form">
                 <form onSubmit={this.submitForm}>
+                    <img src={logo} style={{ width: '100px' }} className="App-logo" alt="logo" />
                     <h2 className="text-lr" >Welcome back!</h2>
                     <h3 className="text-s" >login to access dashboard</h3>
                     <input className="input" type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onChange} /><br />
                     <input className="input" type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange} /><br />
                     <button className="login-btn" type="submit">Log in</button>
+                    <br /><Link className="link-none" to="/registration">Register for an account</Link>
                 </form>
             </div >
         )

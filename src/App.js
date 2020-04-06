@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import LoginPage from './components/login/Login';
 import { Link, Switch, Route, BrowserRouter as Router } from "react-router-dom"
 import DashboardPage from './components/dashboard/Dashboard';
+import Registration from './components/login/Registration';
 
 function App() {
 
@@ -13,6 +13,7 @@ function App() {
       <Switch>
         <Route exact path="/"><LoginPage /> </Route>
         <Route exact path="/l"><DashboardPage /></Route>
+        <Route exact path="/registration"><Registration /></Route>
       </Switch>
     </Router>
 
