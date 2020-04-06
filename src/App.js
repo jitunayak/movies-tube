@@ -13,7 +13,7 @@ function App() {
     <Router>
 
       <Switch>
-        <Route exact path="/"> <Header title="Login" /><LoginPage /> </Route>
+        <Route exact path="/"> <LoginPage /> </Route>
         <Route exact path="/l"><DashboardPage /></Route>
         <Route exact path="/registration"><Header title="Back" /><Registration /></Route>
       </Switch>

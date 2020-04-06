@@ -7,23 +7,16 @@ import DashboardPage from '../dashboard/Dashboard';
 
 export default class LoginPage extends Component {
 
-    constructor(props) {
-        super(props)
-        let loggedIn = false
-        var alert = false
-
-        this.state = {
-            username: "",
-            password: "",
-            loggedIn,
-            alert,
-            alert_msg: ""
-        }
-        this.onChange = this.onChange.bind(this)
-        this.submitForm = this.submitForm.bind(this)
-
-
+    state = {
+        username: "",
+        password: "",
+        loggedIn: false,
+        alert: false,
+        alert_msg: ""
     }
+    onChange = this.onChange.bind(this)
+    submitForm = this.submitForm.bind(this)
+
     onChange(e) {
         this.setState({
             [e.target.name]: e.target.value
@@ -36,7 +29,9 @@ export default class LoginPage extends Component {
         const { username, password } = this.state
         //console.log("username: " + username)
         //Login magic
-        if (username === "jitu" || password === "abc") {
+        if (username === "jitu" ||
+
+            password === "abc") {
             localStorage.setItem("token", "3nx4vdmfvr45yuia")
             this.setState({
                 loggedIn: true
@@ -85,7 +80,7 @@ export default class LoginPage extends Component {
                 <form onSubmit={this.submitForm}>
                     <img src={logo} style={{ width: '100px' }} className="App-logo" alt="logo" />
                     <h2 className="text-lr" >Welcome back!</h2>
-                    <h3 className="text-s" >login to access dashboard</h3>
+                    <h3 className="text-s" >ଆସ ସମସ୍ତେ ମିଶି ବସି  ଦେଖିବା </h3>
                     <input className="input" type="text" name="username" placeholder="username" value={this.state.username} onChange={this.onChange} /><br />
                     <input className="input" type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange} /><br />
                     <button className="login-btn" type="submit">Log in</button>
