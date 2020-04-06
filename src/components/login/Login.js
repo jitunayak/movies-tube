@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import logo from './logo.jpg';
 import { Alert } from 'react-bootstrap';
+import DashboardPage from '../dashboard/Dashboard';
 
 
 export default class LoginPage extends Component {
@@ -20,6 +21,8 @@ export default class LoginPage extends Component {
         }
         this.onChange = this.onChange.bind(this)
         this.submitForm = this.submitForm.bind(this)
+
+
     }
     onChange(e) {
         this.setState({
@@ -31,9 +34,9 @@ export default class LoginPage extends Component {
     submitForm(e) {
         e.preventDefault()
         const { username, password } = this.state
-        console.log("username: " + username)
+        //console.log("username: " + username)
         //Login magic
-        if (username === "a" && password === "a") {
+        if (username === "jitu" || password === "abc") {
             localStorage.setItem("token", "3nx4vdmfvr45yuia")
             this.setState({
                 loggedIn: true
@@ -57,15 +60,22 @@ export default class LoginPage extends Component {
     }
 
     render() {
-
+        if (localStorage.getItem("token")) {
+            console.log("Already logged in " + localStorage.getItem("token"))
+            this.state.loggedIn = true
+            console.log("logged in " + this.state.loggedIn)
+            localStorage.setItem("username", this.state.username)
+        }
         if (this.state.loggedIn) {
             return <Redirect to="/l" />
         }
+
+
         if (this.state.alert) {
-            return <div> <div class="alert alert-danger" role="alert">
+            return <div> <LoginPage /> <div style={{ marginTop: '20px' }} class="alert alert-danger" role="alert">
                 {this.state.alert_msg}
             </div>
-                <LoginPage />
+
             </div>
 
 

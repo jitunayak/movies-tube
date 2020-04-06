@@ -54,7 +54,7 @@ const Registration = () => {
                 })}
             ></input>
             <br />
-            <Button variant="primary" type="submit">Submit</Button>
+            <Button style={{ width: '80%' }} variant="success" type="submit">Sign up</Button>
         </form>
     );
 };

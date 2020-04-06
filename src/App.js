@@ -4,17 +4,20 @@ import LoginPage from './components/login/Login';
 import { Link, Switch, Route, BrowserRouter as Router } from "react-router-dom"
 import DashboardPage from './components/dashboard/Dashboard';
 import Registration from './components/login/Registration';
+import Header from './components/header/header';
 
 function App() {
 
   return (
 
     <Router>
+
       <Switch>
-        <Route exact path="/"><LoginPage /> </Route>
+        <Route exact path="/"> <Header title="Login" /><LoginPage /> </Route>
         <Route exact path="/l"><DashboardPage /></Route>
-        <Route exact path="/registration"><Registration /></Route>
+        <Route exact path="/registration"><Header title="Back" /><Registration /></Route>
       </Switch>
+
     </Router>
 
     // <div className="App">

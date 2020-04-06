@@ -1,3 +1,4 @@
+
 .input{
   color: rgba(0, 0, 32, 0.8);
   font-weight: 400;
@@ -17,8 +18,9 @@
   font-weight: 400;
   font-size: 32px;
   text-align: center;
-  overflow-wrap: break-word;
+  overflow-wrap: initial;
   line-height: 25px;
+  margin-top: 22px;
 }
 .text-s{
   font-weight: 400;
@@ -37,7 +39,7 @@
   font-weight: 500;
   font-size: large;
   line-height: 38px;
-  width: 83%;
+  width: 80%;
   outline: none;
   border: none;
   border-radius: 5px;
@@ -51,19 +53,19 @@
   font-weight: 550;
   font-size: large;
   line-height: 40px;
-  width: 83%;
+  width: 80%;
   outline: 1;
   border: none;
   border-radius: 5px;
 }
 .form{
-  align-items: center;
   text-align: center;
   margin: 0 auto 0 auto;
-  max-width: 480px;
-  width: 40%;
+  min-width: 350px;
+  max-width: 680px;
+  width: 60%;
   position: relative;
-  top: 300px;
+  padding-top: 10%;;
 }
 
 .logout-btn{
@@ -94,3 +96,4 @@
   border: none;
   border-radius: 5px;
 }
+

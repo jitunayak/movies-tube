@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from "react-router-dom"
 import { Button } from 'react-bootstrap'
+import LoginPage from '../login/Login'
 
 export default class DashboardPage extends Component {
     constructor(props) {
@@ -30,18 +31,22 @@ export default class DashboardPage extends Component {
     };
 
     render() {
-        console.log(this.state.loggedIn)
+        let username = localStorage.getItem("username")
+        const name = this.props.user
+        console.log(name)
+        console.log("logged in Dashbaord " + this.state.loggedIn)
+
         if (this.state.loggedIn === false) {
-            console.log("return to login page")
+            console.log("no token found")
             return <Redirect to="/" />
         }
         if (this.state.logout === true) {
-            return <Redirect to="/" />
+            return <LoginPage />
         }
         return (
             <div>
                 <div>
-                    <h1>Logged in</h1>
+                    <h1>User: {username} </h1>
                     <button className="logout-btn" onClick={this.logoutf}>
                         Log out
                     </button>
