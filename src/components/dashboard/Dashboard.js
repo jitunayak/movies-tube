@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Redirect } from "react-router-dom"
 import { Button } from 'react-bootstrap'
 import LoginPage from '../login/Login'
+import Main from '../SearchBoard/Main'
 
 export default class DashboardPage extends Component {
     constructor(props) {
@@ -46,11 +47,11 @@ export default class DashboardPage extends Component {
         return (
             <div>
                 <div>
-                    <h1>User: {username} </h1>
                     <button className="logout-btn" onClick={this.logoutf}>
                         Log out
                     </button>
                     {' '}
+                    <Main />
                 </div>
             </div>
         )

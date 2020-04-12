@@ -14,7 +14,7 @@
   margin: 5px;
 }
 .text-lr{
-  color: rgba(0, 0, 32, 0.9);
+  color: rgba(230, 230, 230, 0.9);
   font-weight: 400;
   font-size: 32px;
   text-align: center;
@@ -26,11 +26,11 @@
   font-weight: 400;
   font-size: 17px;
   text-align: center;
-  color: rgba(0, 0, 32, 0.8);
+  color: rgba(230, 230, 230, 0.9);
   line-height: 25px;
   margin-top: 5px;
 }
-.login-btn{
+.login-btn:hover{
   margin: 5px;
   text-decoration: none;
   background-color: rgb(59, 59, 59);
@@ -44,7 +44,7 @@
   border: none;
   border-radius: 5px;
 }
-.login-btn:hover{
+.login-btn{
   margin: 5px;
   text-decoration: none;
   background-color: #FCD600;
@@ -70,8 +70,9 @@
 
 .logout-btn{
   margin: 5px;
+  padding: 5px;
   text-decoration: none;
-  background-color: #6B8790;
+  background-color: rgb(173, 55, 19);
   line-height: 1;
   color: aliceblue;
   font-weight: 500;
